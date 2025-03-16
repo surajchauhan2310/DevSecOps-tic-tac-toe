@@ -8,8 +8,13 @@ RUN npm run build
 
 # Production stage
 FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
-# Add nginx configuration if needed
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
+WORKDIR /usr/share/nginx/html
+
+# Upgrade system packages to fix vulnerabilities
+RUN apk update && apk upgrade --no-cache
+
+# Copy built application from build stage
+COPY --from=build /app/dist .
+
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
