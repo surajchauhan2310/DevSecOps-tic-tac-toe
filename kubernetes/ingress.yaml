@@ -9,7 +9,7 @@ metadata:
     # nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: 23surajrc.com  # Replace with your actual domain
+  - host: www.23surajrc.com  # Replace with your actual domain
     http:
       paths:
       - path: /
