@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: tic-tac-toe-ingress
+  namespace: default
   annotations:
     kubernetes.io/ingress.class: nginx
     # Add additional annotations as needed for your specific ingress controller
@@ -18,7 +19,7 @@ spec:
             name: tic-tac-toe
             port:
               number: 80
-  Uncomment and configure if you want TLS
+  # Uncomment and configure if you want TLS
   tls:
   - hosts:
     - 23surajrc.com
