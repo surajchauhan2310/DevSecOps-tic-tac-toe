@@ -11,7 +11,7 @@ interface ScoreBoardProps {
 
 const ScoreBoard: React.FC<ScoreBoardProps> = ({ scores }) => {
   return (
-    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+    <div className="bg-darkgray-50 p-4 rounded-lg border border-gray-200">
       <h2 className="text-lg font-semibold text-gray-800 mb-3 flex items-center gap-2">
         <Trophy className="h-5 w-5 text-yellow-500" />
         Score Board
